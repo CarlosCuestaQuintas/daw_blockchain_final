@@ -3,14 +3,14 @@
 
 const { buildModule } = require("@nomicfoundation/hardhat-ignition/modules");
 
-module.exports = buildModule("MiNFTModule", (m) => {
+module.exports = buildModule("NFTDesplegableModule", (m) => {
   // Parámetros de despliegue
-  const name = m.getParameter("name", "MiNFT");
+  const name = m.getParameter("name", "NFTDesplegable");
   const symbol = m.getParameter("symbol", "M2");
-  const baseTokenURI = m.getParameter("baseTokenURI", "http://localhost:3000/metadata/");
+  const baseTokenURI = m.getParameter("baseTokenURI", "a");
 
-  // Despliegue del contrato MiNFT2
-  const miNFT2 = m.contract("MiNFT", "0x5A3B1D4C5D5C5D5C5D5C5D5C5D5C5D5C5D5C5D5C");
+  // Despliegue del contrato NFTDesplegable
+  const nftDesplegable = m.contract("NFTDesplegable", ["0x5A3B1D4C5D5C5D5C5D5C5D5C5D5C5D5C5D5C5D5C"]);
 
-  return { miNFT2 };
+  return { nftDesplegable };
 });
